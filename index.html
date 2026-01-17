@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌿 Calculadora de emissão de CO₂</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page">
+
+  <header class="page__header header">
+    <h1 class="header__title">🌿 Calculadora de emissão de CO₂</h1>
+    <p class="header__subtitle">
+      Calcule as emissões de CO₂ das suas viagens e contribua para um planeta mais sustentável
+    </p>
+  </header>
+
+  <main class="page__main main">
+    <form id="Calculator-form" class="main__form form">
+
+      <div class="form__group form__group--location">
+        <label for="origin" class="form__label">Origem</label>
+        <input type="text" id="origin" class="form__input" list="Cities-list" placeholder="Digite a cidade de origem" />
+      </div>
+
+      <div class="form__group form__group--location">
+        <label for="destination" class="form__label">Destino</label>
+        <input type="text" id="destination" class="form__input" list="Cities-list" placeholder="Digite a cidade de destino" />
+        <datalist id="Cities-list"></datalist>
+      </div>
+
+      <div class="form__group form__group--distance">
+        <label for="distance" class="form__label">Distância (km)</label>
+        <input type="number" id="distance" class="form__input" readonly />
+        <small class="form__helper-text">A distância será preenchida automaticamente</small>
+        <div class="form__checkbox-wrapper">
+          <input type="checkbox" id="manual-distance" class="form__checkbox" />
+          <label for="manual-distance" class="form__checkbox-label">Inserir distância manualmente</label>
+        </div>
+      </div>
+
+      <fieldset class="form__group form__group--transport">
+        <legend class="form__legend">Meio de Transporte</legend>
+        <div class="form__transport-grid">
+          <label class="form__transport-option">
+            <input type="radio" name="Transport" value="Bicycle" class="form__radio" />
+            🚲 Bicicleta
+          </label>
+          <label class="form__transport-option">
+            <input type="radio" name="Transport" value="Car" class="form__radio" checked />
+            🚗 Carro
+          </label>
+          <label class="form__transport-option">
+            <input type="radio" name="Transport" value="Bus" class="form__radio" />
+            🚌 Ônibus
+          </label>
+          <label class="form__transport-option">
+            <input type="radio" name="Transport" value="Truck" class="form__radio" />
+            🚚 Caminhão
+          </label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="form__submit-button">Calcular emissão</button>
+    </form>
+
+    <section id="results" class="main__section section hidden">
+      <div id="results-content" class="section__content"></div>
+    </section>
+
+    <section id="comparison" class="main__section section hidden">
+      <div id="comparison-content" class="section__content"></div>
+    </section>
+
+    <section id="carbon-credits" class="main__section section hidden">
+      <div id="carbon-credits-content" class="section__content"></div>
+    </section>
+  </main>
+
+  <footer class="page__footer footer">
+    <p class="footer__credit">Desenvolvido para DIO | Projeto com GitHub Copilot do Bruno</p>
+  </footer>
+
+  <script src="js/routes-data.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
