@@ -1,0 +1,271 @@
+/* =========================
+   CSS VARIABLES
+========================= */
+:root {
+  /* Colors */
+  --primary: #10b981;
+  --secondary: #059669;
+  --accent: #34d399;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --bg: #f3f4f6;
+  --white: #ffffff;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.8rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Radius */
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+  color: var(--text);
+}
+
+/* =========================
+   UTILITIES
+========================= */
+.hidden {
+  display: none !important;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  background: var(--white);
+  padding: var(--spacing-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.header__title {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.header__subtitle {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* =========================
+   MAIN / FORM
+========================= */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-xl) var(--spacing-sm);
+}
+
+.form {
+  background: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 520px;
+}
+
+/* =========================
+   FORM GROUPS
+========================= */
+.form__group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.form__input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+}
+
+.form__helper-text {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+.form__checkbox-wrapper {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.form__checkbox {
+  cursor: pointer;
+}
+
+.form__checkbox-label {
+  cursor: pointer;
+}
+
+/* =========================
+   TRANSPORT SECTION (FIXED)
+========================= */
+.form__group--transport {
+  padding: var(--spacing-sm);
+  border: none;
+}
+
+.form__legend {
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.form__transport-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.form__transport-option {
+  position: relative;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--white);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 96px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.form__transport-option:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.form__radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.form__transport-option:has(.form__radio:checked) {
+  border: 2px solid var(--primary);
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.form__submit-button {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form__submit-button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.form__submit-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* =========================
+   SECTIONS (RESULTS)
+========================= */
+.section {
+  margin-top: var(--spacing-lg);
+  background: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 520px;
+}
+
+.section__content {
+  color: var(--text);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  text-align: center;
+  padding: var(--spacing-md);
+  color: var(--text-light);
+  background-color: var(--bg);
+  font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (min-width: 768px) {
+  .form__transport-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
