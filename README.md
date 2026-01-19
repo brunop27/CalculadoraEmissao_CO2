@@ -23,16 +23,16 @@ O projeto foi desenvolvido com auxilio do Github copilot (Assistente de programa
 ## Estrutura do Projeto 
 
 CalculadoraEmissao_CO2
-├── index.html
-├── readme.md
-├── css
-│   └── style.css
-└── js
-    ├── routes-data.js
-    ├── config.js
-    ├── calculator.js
-    ├── ui.js
-    └── app.js
+-index.html
+-readme.md
+-css/
+    -style.css
+-js/
+    -routes-data.js
+    -config.js
+    -calculator.js
+    -ui.js
+    -app.js
 
 ## Considerações
 Este projeto tem caráter educacional. Tendo como prática
